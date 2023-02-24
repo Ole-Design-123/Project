@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>EXAM INFO</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+    <link href="~/Content/CSS/Site.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Style.css" rel="stylesheet" />
+    <link href="~/Content/CSS/StyleSheet.css" rel="stylesheet" />
+    <script src="~/Design/project.js"></script>
+    <script src="~/Design/Sweetalert/sweetalert2.js"></script>
+    <link href="~/Design/Sweetalert/sweetalert2.css" rel="stylesheet" />
+
+
+    
+    <script src="~/Design/Javascript/sweetalert2.js"></script>
+    <link href="~/Design/StyleSheet/SweetAlert/SweetAlert.css" rel="stylesheet" />
+    @*<script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="Scripts/Myscript.js" type="text/javascript"></script>*@
+    @*<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="~/Content/CSS/Table_Design.css" rel="stylesheet" />
+</head>
+
+<body>
+    <link href="~/Content/CSS/Table_Design.css" rel="stylesheet" />
+    <div class="page" style="margin-bottom: 20px">
+        <div class="header">
+            <div class="title" style="text-align: center">
+                <img src="~/Content/Images/MSBSHSE-LOGO.png" style="float: left; height:100px" />
+                <h1 style="padding-top:5px;">
+                    Maharashtra State Board of Secondary & Higher Secondary Education
+                    <br />  Pune 411004
+                </h1>
+                <h2>
+                    Official Website for online IT Exam @Session["a"]
+                </h2>
+            </div>
+            <div>
+                <div class="clear hideSkiplink" id="div2" runat="server">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.Identity.IsAuthenticated && Session["CID"] != null)
+                        {
+                            <span style="float: right; color: white; font-weight: bolder; font-size:medium; margin-right: 10px;margin-top: 6px;">
+                                020-25705208 |Contact Us:-oleexam@gmail.com
+                            </span>
+                            <div class="dropdown" style="margin:7px">
+                                <button> @Html.ActionLink("View Teacher list", "teacherData", "Coordinator")</button>
+                            </div>
+                            <div class="dropdown" style="margin:7px">
+                                <button> @Html.ActionLink("Get Paper for Model Answers", "Model_Ans_Paper", "Coordinator")</button>
+                            </div>
+
+                            <span style="float: left; color: white; font-weight: bolder; font-size:medium; margin-left: 10px;margin-top: 6px;">
+                                <span>Welcome  @Session["User_Name"] | </span>
+                                @Html.ActionLink("Logout", "Logout", new { controller = "Home" }, new { @style = "color: #80ebd7" })
+                            </span>
+                        }
+                        if (User.Identity.IsAuthenticated && Session["TID"] != null)
+                        {
+                            <span style="float: right; color: white; font-weight: bolder; font-size:medium; margin-right: 10px;margin-top: 6px;">
+                                020-25705208 |Contact Us:-oleexam@gmail.com
+                            </span>
+                            <span style="float: left; color: white; font-weight: bolder; font-size:medium; margin-left: 10px;margin-top: 6px;">
+                                <span>Welcome  @Session["User_Name"] | </span>
+                                @Html.ActionLink("Logout", "Logout", new { controller = "Home" }, new
+                                {
+
+
+                               @style = "color: #80ebd7"
+                                })
+                            </span>
+                        }
+                    }
+                    else
+                    {
+                        <div class="dropdown">
+                            @Html.ActionLink("Home", "Index", "Home", new { controller = "Home" }, new { @class = "dropbtn", @style = "color: white" })
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">Registration</button>
+                            <div class="dropdown-content">
+                                @Html.ActionLink("Teacher", "College_Reg", "Home")
+                                @Html.ActionLink("Coordinator", "Coordinator_Reg", "Home")
+                                @Html.ActionLink("Moderator", "Moderator_Reg", "Home")
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">Login</button>
+                            <div class="dropdown-content">
+                                @Html.ActionLink("Teacher Login", "College_Login", "Home")
+                                @Html.ActionLink("Cordinator Login", "Coordinator_LogIn", "Home")
+                                @Html.ActionLink("Moderator Login", "Moderator_Login", "Home")
+                                @Html.ActionLink("Admin Login", "Admin_Login", "Admin")
+                                @*@Html.ActionLink("Get Paper for Model Answers", "Model_Ans_Paper", "Coordinator")*@
+
+
+                                @*<a href="~/Debug.zip">Teacher Tool</a>*@
+                                @*<a href="~/ModeratorTool_12.zip">Moderator Tool</a>*@
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            @RenderBody()
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="container body-content" style="text-align: center">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Maharashtra State Board</p>
+        </footer>
+    </div>
+    <script src="~/Design/Javascript/Project.js"></script>
+</body>
+</html>

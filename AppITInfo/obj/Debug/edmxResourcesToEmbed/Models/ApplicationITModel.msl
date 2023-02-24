@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ITDb1ModelStoreContainer" CdmEntityContainer="ITDb1Entities">
+    <EntitySetMapping Name="Tbl_AllAns">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_AllAns">
+        <MappingFragment StoreEntitySet="Tbl_AllAns">
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="PStatus" ColumnName="PStatus" />
+          <ScalarProperty Name="IndexNo" ColumnName="IndexNo" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="Q1Ans1" ColumnName="Q1Ans1" />
+          <ScalarProperty Name="Q1Ans2" ColumnName="Q1Ans2" />
+          <ScalarProperty Name="Q1Ans3" ColumnName="Q1Ans3" />
+          <ScalarProperty Name="Q1Ans4" ColumnName="Q1Ans4" />
+          <ScalarProperty Name="Q1Ans5" ColumnName="Q1Ans5" />
+          <ScalarProperty Name="Q1Ans6" ColumnName="Q1Ans6" />
+          <ScalarProperty Name="Q1Ans7" ColumnName="Q1Ans7" />
+          <ScalarProperty Name="Q1Ans8" ColumnName="Q1Ans8" />
+          <ScalarProperty Name="Q1Ans9" ColumnName="Q1Ans9" />
+          <ScalarProperty Name="Q1Ans10" ColumnName="Q1Ans10" />
+          <ScalarProperty Name="Q7Ans1" ColumnName="Q7Ans1" />
+          <ScalarProperty Name="Q7Ans2" ColumnName="Q7Ans2" />
+          <ScalarProperty Name="Q7Ans3" ColumnName="Q7Ans3" />
+          <ScalarProperty Name="Q7Ans4" ColumnName="Q7Ans4" />
+          <ScalarProperty Name="Q7Ans5" ColumnName="Q7Ans5" />
+          <ScalarProperty Name="Q7Ans6" ColumnName="Q7Ans6" />
+          <ScalarProperty Name="Q7Ans7" ColumnName="Q7Ans7" />
+          <ScalarProperty Name="Q7Ans8" ColumnName="Q7Ans8" />
+          <ScalarProperty Name="Q8Ans1" ColumnName="Q8Ans1" />
+          <ScalarProperty Name="Q8Ans2" ColumnName="Q8Ans2" />
+          <ScalarProperty Name="Q8Ans3" ColumnName="Q8Ans3" />
+          <ScalarProperty Name="Q8Ans4" ColumnName="Q8Ans4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Coordinator">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Coordinator">
+        <MappingFragment StoreEntitySet="Tbl_Coordinator">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="IndexNo" ColumnName="IndexNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CollgeLogin">
+      <EntityTypeMapping TypeName="ITDb1Model.tbl_CollgeLogin">
+        <MappingFragment StoreEntitySet="tbl_CollgeLogin">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="IndexNo" ColumnName="IndexNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Moderator">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Moderator">
+        <MappingFragment StoreEntitySet="Tbl_Moderator">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="IndexNo" ColumnName="IndexNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Code_Master">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Code_Master">
+        <MappingFragment StoreEntitySet="Tbl_Code_Master">
+          <ScalarProperty Name="taluka_name" ColumnName="taluka_name" />
+          <ScalarProperty Name="taluka_code" ColumnName="taluka_code" />
+          <ScalarProperty Name="district_name" ColumnName="district_name" />
+          <ScalarProperty Name="district_code" ColumnName="district_code" />
+          <ScalarProperty Name="division_name" ColumnName="division_name" />
+          <ScalarProperty Name="division_code" ColumnName="division_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Moderator_Marks">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Moderator_Marks">
+        <MappingFragment StoreEntitySet="Tbl_Moderator_Marks">
+          <ScalarProperty Name="Submission_Time" ColumnName="Submission_Time" />
+          <ScalarProperty Name="Q8Ans4" ColumnName="Q8Ans4" />
+          <ScalarProperty Name="Q8Ans3" ColumnName="Q8Ans3" />
+          <ScalarProperty Name="Q8Ans2" ColumnName="Q8Ans2" />
+          <ScalarProperty Name="Q8Ans1" ColumnName="Q8Ans1" />
+          <ScalarProperty Name="Q7Ans8" ColumnName="Q7Ans8" />
+          <ScalarProperty Name="Q7Ans7" ColumnName="Q7Ans7" />
+          <ScalarProperty Name="Q7Ans6" ColumnName="Q7Ans6" />
+          <ScalarProperty Name="Q7Ans5" ColumnName="Q7Ans5" />
+          <ScalarProperty Name="Q7Ans4" ColumnName="Q7Ans4" />
+          <ScalarProperty Name="Q7Ans3" ColumnName="Q7Ans3" />
+          <ScalarProperty Name="Q7Ans2" ColumnName="Q7Ans2" />
+          <ScalarProperty Name="Q7Ans1" ColumnName="Q7Ans1" />
+          <ScalarProperty Name="Q1Ans10" ColumnName="Q1Ans10" />
+          <ScalarProperty Name="Q1Ans9" ColumnName="Q1Ans9" />
+          <ScalarProperty Name="Q1Ans8" ColumnName="Q1Ans8" />
+          <ScalarProperty Name="Q1Ans7" ColumnName="Q1Ans7" />
+          <ScalarProperty Name="Q1Ans6" ColumnName="Q1Ans6" />
+          <ScalarProperty Name="Q1Ans5" ColumnName="Q1Ans5" />
+          <ScalarProperty Name="Q1Ans4" ColumnName="Q1Ans4" />
+          <ScalarProperty Name="Q1Ans3" ColumnName="Q1Ans3" />
+          <ScalarProperty Name="Q1Ans2" ColumnName="Q1Ans2" />
+          <ScalarProperty Name="Q1Ans1" ColumnName="Q1Ans1" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="Div_Code" ColumnName="Div_Code" />
+          <ScalarProperty Name="Moderator_Index_No" ColumnName="Moderator_Index_No" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Marks">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Marks">
+        <MappingFragment StoreEntitySet="Tbl_Marks">
+          <ScalarProperty Name="Q8Ans4" ColumnName="Q8Ans4" />
+          <ScalarProperty Name="Q8Ans3" ColumnName="Q8Ans3" />
+          <ScalarProperty Name="Q8Ans2" ColumnName="Q8Ans2" />
+          <ScalarProperty Name="Q8Ans1" ColumnName="Q8Ans1" />
+          <ScalarProperty Name="Q7Ans8" ColumnName="Q7Ans8" />
+          <ScalarProperty Name="Q7Ans7" ColumnName="Q7Ans7" />
+          <ScalarProperty Name="Q7Ans6" ColumnName="Q7Ans6" />
+          <ScalarProperty Name="Q7Ans5" ColumnName="Q7Ans5" />
+          <ScalarProperty Name="Q7Ans4" ColumnName="Q7Ans4" />
+          <ScalarProperty Name="Q7Ans3" ColumnName="Q7Ans3" />
+          <ScalarProperty Name="Q7Ans2" ColumnName="Q7Ans2" />
+          <ScalarProperty Name="Q7Ans1" ColumnName="Q7Ans1" />
+          <ScalarProperty Name="Q1Ans10" ColumnName="Q1Ans10" />
+          <ScalarProperty Name="Q1Ans9" ColumnName="Q1Ans9" />
+          <ScalarProperty Name="Q1Ans8" ColumnName="Q1Ans8" />
+          <ScalarProperty Name="Q1Ans7" ColumnName="Q1Ans7" />
+          <ScalarProperty Name="Q1Ans6" ColumnName="Q1Ans6" />
+          <ScalarProperty Name="Q1Ans5" ColumnName="Q1Ans5" />
+          <ScalarProperty Name="Q1Ans4" ColumnName="Q1Ans4" />
+          <ScalarProperty Name="Q1Ans3" ColumnName="Q1Ans3" />
+          <ScalarProperty Name="Q1Ans2" ColumnName="Q1Ans2" />
+          <ScalarProperty Name="Q1Ans1" ColumnName="Q1Ans1" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Model_Ans_New">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Model_Ans_New">
+        <MappingFragment StoreEntitySet="Tbl_Model_Ans_New">
+          <ScalarProperty Name="Papers_Path" ColumnName="Papers_Path" />
+          <ScalarProperty Name="Model_Ans" ColumnName="Model_Ans" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Sub_Question" ColumnName="Sub_Question" />
+          <ScalarProperty Name="Question_No" ColumnName="Question_No" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bindPapers">
+      <EntityTypeMapping TypeName="ITDb1Model.bindPaper">
+        <MappingFragment StoreEntitySet="bindPaper">
+          <ScalarProperty Name="Paper_Id" ColumnName="Paper_Id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Admin">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Admin">
+        <MappingFragment StoreEntitySet="Tbl_Admin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Index_No" ColumnName="Index_No" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Decoded_Answer_Sheets">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Decoded_Answer_Sheets">
+        <MappingFragment StoreEntitySet="Tbl_Decoded_Answer_Sheets">
+          <ScalarProperty Name="Q8ANSWERTIME" ColumnName="Q8ANSWERTIME" />
+          <ScalarProperty Name="Q8ANS4" ColumnName="Q8ANS4" />
+          <ScalarProperty Name="Q8ANS3" ColumnName="Q8ANS3" />
+          <ScalarProperty Name="Q8ANS2" ColumnName="Q8ANS2" />
+          <ScalarProperty Name="Q8ANS1" ColumnName="Q8ANS1" />
+          <ScalarProperty Name="Q7ANSWERTIME" ColumnName="Q7ANSWERTIME" />
+          <ScalarProperty Name="Q7ANS8" ColumnName="Q7ANS8" />
+          <ScalarProperty Name="Q7ANS7" ColumnName="Q7ANS7" />
+          <ScalarProperty Name="Q7ANS6" ColumnName="Q7ANS6" />
+          <ScalarProperty Name="Q7ANS5" ColumnName="Q7ANS5" />
+          <ScalarProperty Name="Q7ANS4" ColumnName="Q7ANS4" />
+          <ScalarProperty Name="Q7ANS3" ColumnName="Q7ANS3" />
+          <ScalarProperty Name="Q7ANS2" ColumnName="Q7ANS2" />
+          <ScalarProperty Name="Q7ANS1" ColumnName="Q7ANS1" />
+          <ScalarProperty Name="Q6ANSWERTIME" ColumnName="Q6ANSWERTIME" />
+          <ScalarProperty Name="Q6ANS1" ColumnName="Q6ANS1" />
+          <ScalarProperty Name="Q5ANSWERTIME" ColumnName="Q5ANSWERTIME" />
+          <ScalarProperty Name="Q5ANS2" ColumnName="Q5ANS2" />
+          <ScalarProperty Name="Q5ANS1" ColumnName="Q5ANS1" />
+          <ScalarProperty Name="Q4ANSWERTIME" ColumnName="Q4ANSWERTIME" />
+          <ScalarProperty Name="Q4ANS10" ColumnName="Q4ANS10" />
+          <ScalarProperty Name="Q4ANS9" ColumnName="Q4ANS9" />
+          <ScalarProperty Name="Q4ANS8" ColumnName="Q4ANS8" />
+          <ScalarProperty Name="Q4ANS7" ColumnName="Q4ANS7" />
+          <ScalarProperty Name="Q4ANS6" ColumnName="Q4ANS6" />
+          <ScalarProperty Name="Q4ANS5" ColumnName="Q4ANS5" />
+          <ScalarProperty Name="Q4ANS4" ColumnName="Q4ANS4" />
+          <ScalarProperty Name="Q4ANS3" ColumnName="Q4ANS3" />
+          <ScalarProperty Name="Q4ANS2" ColumnName="Q4ANS2" />
+          <ScalarProperty Name="Q4ANS1" ColumnName="Q4ANS1" />
+          <ScalarProperty Name="Q3ANSWERTIME" ColumnName="Q3ANSWERTIME" />
+          <ScalarProperty Name="Q3ANS10" ColumnName="Q3ANS10" />
+          <ScalarProperty Name="Q3ANS9" ColumnName="Q3ANS9" />
+          <ScalarProperty Name="Q3ANS8" ColumnName="Q3ANS8" />
+          <ScalarProperty Name="Q3ANS7" ColumnName="Q3ANS7" />
+          <ScalarProperty Name="Q3ANS6" ColumnName="Q3ANS6" />
+          <ScalarProperty Name="Q3ANS5" ColumnName="Q3ANS5" />
+          <ScalarProperty Name="Q3ANS4" ColumnName="Q3ANS4" />
+          <ScalarProperty Name="Q3ANS3" ColumnName="Q3ANS3" />
+          <ScalarProperty Name="Q3ANS2" ColumnName="Q3ANS2" />
+          <ScalarProperty Name="Q3ANS1" ColumnName="Q3ANS1" />
+          <ScalarProperty Name="Q2ANSWERTIME" ColumnName="Q2ANSWERTIME" />
+          <ScalarProperty Name="Q2ANS10" ColumnName="Q2ANS10" />
+          <ScalarProperty Name="Q2ANS9" ColumnName="Q2ANS9" />
+          <ScalarProperty Name="Q2ANS8" ColumnName="Q2ANS8" />
+          <ScalarProperty Name="Q2ANS7" ColumnName="Q2ANS7" />
+          <ScalarProperty Name="Q2ANS6" ColumnName="Q2ANS6" />
+          <ScalarProperty Name="Q2ANS5" ColumnName="Q2ANS5" />
+          <ScalarProperty Name="Q2ANS4" ColumnName="Q2ANS4" />
+          <ScalarProperty Name="Q2ANS3" ColumnName="Q2ANS3" />
+          <ScalarProperty Name="Q2ANS2" ColumnName="Q2ANS2" />
+          <ScalarProperty Name="Q2ANS1" ColumnName="Q2ANS1" />
+          <ScalarProperty Name="Q1ANSWERTIME" ColumnName="Q1ANSWERTIME" />
+          <ScalarProperty Name="Q1ANS10" ColumnName="Q1ANS10" />
+          <ScalarProperty Name="Q1ANS9" ColumnName="Q1ANS9" />
+          <ScalarProperty Name="Q1ANS8" ColumnName="Q1ANS8" />
+          <ScalarProperty Name="Q1ANS7" ColumnName="Q1ANS7" />
+          <ScalarProperty Name="Q1ANS6" ColumnName="Q1ANS6" />
+          <ScalarProperty Name="Q1ANS5" ColumnName="Q1ANS5" />
+          <ScalarProperty Name="Q1ANS4" ColumnName="Q1ANS4" />
+          <ScalarProperty Name="Q1ANS3" ColumnName="Q1ANS3" />
+          <ScalarProperty Name="Q1ANS2" ColumnName="Q1ANS2" />
+          <ScalarProperty Name="Q1ANS1" ColumnName="Q1ANS1" />
+          <ScalarProperty Name="Exam_Time" ColumnName="Exam_Time" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="Login_Status" ColumnName="Login_Status" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Final_Ans">
+      <EntityTypeMapping TypeName="ITDb1Model.Tbl_Final_Ans">
+        <MappingFragment StoreEntitySet="Tbl_Final_Ans">
+          <ScalarProperty Name="Q8Ans4" ColumnName="Q8Ans4" />
+          <ScalarProperty Name="Q8Ans3" ColumnName="Q8Ans3" />
+          <ScalarProperty Name="Q8Ans2" ColumnName="Q8Ans2" />
+          <ScalarProperty Name="Q8Ans1" ColumnName="Q8Ans1" />
+          <ScalarProperty Name="Q7Ans8" ColumnName="Q7Ans8" />
+          <ScalarProperty Name="Q7Ans7" ColumnName="Q7Ans7" />
+          <ScalarProperty Name="Q7Ans6" ColumnName="Q7Ans6" />
+          <ScalarProperty Name="Q7Ans5" ColumnName="Q7Ans5" />
+          <ScalarProperty Name="Q7Ans4" ColumnName="Q7Ans4" />
+          <ScalarProperty Name="Q7Ans3" ColumnName="Q7Ans3" />
+          <ScalarProperty Name="Q7Ans2" ColumnName="Q7Ans2" />
+          <ScalarProperty Name="Q7Ans1" ColumnName="Q7Ans1" />
+          <ScalarProperty Name="Q6Ans2" ColumnName="Q6Ans2" />
+          <ScalarProperty Name="Q6Ans1" ColumnName="Q6Ans1" />
+          <ScalarProperty Name="Q5Ans2" ColumnName="Q5Ans2" />
+          <ScalarProperty Name="Q5Ans1" ColumnName="Q5Ans1" />
+          <ScalarProperty Name="Q4Ans5" ColumnName="Q4Ans5" />
+          <ScalarProperty Name="Q4Ans4" ColumnName="Q4Ans4" />
+          <ScalarProperty Name="Q4Ans3" ColumnName="Q4Ans3" />
+          <ScalarProperty Name="Q4Ans2" ColumnName="Q4Ans2" />
+          <ScalarProperty Name="Q4Ans1" ColumnName="Q4Ans1" />
+          <ScalarProperty Name="Q3BAns20" ColumnName="Q3BAns20" />
+          <ScalarProperty Name="Q3BAns19" ColumnName="Q3BAns19" />
+          <ScalarProperty Name="Q3BAns18" ColumnName="Q3BAns18" />
+          <ScalarProperty Name="Q3BAns17" ColumnName="Q3BAns17" />
+          <ScalarProperty Name="Q3BAns16" ColumnName="Q3BAns16" />
+          <ScalarProperty Name="Q3BAns15" ColumnName="Q3BAns15" />
+          <ScalarProperty Name="Q3BAns14" ColumnName="Q3BAns14" />
+          <ScalarProperty Name="Q3BAns13" ColumnName="Q3BAns13" />
+          <ScalarProperty Name="Q3BAns12" ColumnName="Q3BAns12" />
+          <ScalarProperty Name="Q3BAns11" ColumnName="Q3BAns11" />
+          <ScalarProperty Name="Q3AAns10" ColumnName="Q3AAns10" />
+          <ScalarProperty Name="Q3AAns9" ColumnName="Q3AAns9" />
+          <ScalarProperty Name="Q3AAns8" ColumnName="Q3AAns8" />
+          <ScalarProperty Name="Q3AAns7" ColumnName="Q3AAns7" />
+          <ScalarProperty Name="Q3AAns6" ColumnName="Q3AAns6" />
+          <ScalarProperty Name="Q3AAns5" ColumnName="Q3AAns5" />
+          <ScalarProperty Name="Q3AAns4" ColumnName="Q3AAns4" />
+          <ScalarProperty Name="Q3AAns3" ColumnName="Q3AAns3" />
+          <ScalarProperty Name="Q3AAns2" ColumnName="Q3AAns2" />
+          <ScalarProperty Name="Q3AAns1" ColumnName="Q3AAns1" />
+          <ScalarProperty Name="Q2Ans10" ColumnName="Q2Ans10" />
+          <ScalarProperty Name="Q2Ans9" ColumnName="Q2Ans9" />
+          <ScalarProperty Name="Q2Ans8" ColumnName="Q2Ans8" />
+          <ScalarProperty Name="Q2Ans7" ColumnName="Q2Ans7" />
+          <ScalarProperty Name="Q2Ans6" ColumnName="Q2Ans6" />
+          <ScalarProperty Name="Q2Ans5" ColumnName="Q2Ans5" />
+          <ScalarProperty Name="Q2Ans4" ColumnName="Q2Ans4" />
+          <ScalarProperty Name="Q2Ans3" ColumnName="Q2Ans3" />
+          <ScalarProperty Name="Q2Ans2" ColumnName="Q2Ans2" />
+          <ScalarProperty Name="Q2Ans1" ColumnName="Q2Ans1" />
+          <ScalarProperty Name="Q1Ans10" ColumnName="Q1Ans10" />
+          <ScalarProperty Name="Q1Ans9" ColumnName="Q1Ans9" />
+          <ScalarProperty Name="Q1Ans8" ColumnName="Q1Ans8" />
+          <ScalarProperty Name="Q1Ans7" ColumnName="Q1Ans7" />
+          <ScalarProperty Name="Q1Ans6" ColumnName="Q1Ans6" />
+          <ScalarProperty Name="Q1Ans5" ColumnName="Q1Ans5" />
+          <ScalarProperty Name="Q1Ans4" ColumnName="Q1Ans4" />
+          <ScalarProperty Name="Q1Ans3" ColumnName="Q1Ans3" />
+          <ScalarProperty Name="Q1Ans2" ColumnName="Q1Ans2" />
+          <ScalarProperty Name="Q1Ans1" ColumnName="Q1Ans1" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="AssignedDatetime" ColumnName="AssignedDatetime" />
+          <ScalarProperty Name="seat_no" ColumnName="seat_no" />
+          <ScalarProperty Name="cstate" ColumnName="cstate" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAllAns_Bk">
+      <EntityTypeMapping TypeName="ITDb1Model.TblAllAns_Bk">
+        <MappingFragment StoreEntitySet="TblAllAns_Bk">
+          <ScalarProperty Name="Q8Ans4" ColumnName="Q8Ans4" />
+          <ScalarProperty Name="Q8Ans3" ColumnName="Q8Ans3" />
+          <ScalarProperty Name="Q8Ans2" ColumnName="Q8Ans2" />
+          <ScalarProperty Name="Q8Ans1" ColumnName="Q8Ans1" />
+          <ScalarProperty Name="Q7Ans8" ColumnName="Q7Ans8" />
+          <ScalarProperty Name="Q7Ans7" ColumnName="Q7Ans7" />
+          <ScalarProperty Name="Q7Ans6" ColumnName="Q7Ans6" />
+          <ScalarProperty Name="Q7Ans5" ColumnName="Q7Ans5" />
+          <ScalarProperty Name="Q7Ans4" ColumnName="Q7Ans4" />
+          <ScalarProperty Name="Q7Ans3" ColumnName="Q7Ans3" />
+          <ScalarProperty Name="Q7Ans2" ColumnName="Q7Ans2" />
+          <ScalarProperty Name="Q7Ans1" ColumnName="Q7Ans1" />
+          <ScalarProperty Name="Q1Ans10" ColumnName="Q1Ans10" />
+          <ScalarProperty Name="Q1Ans9" ColumnName="Q1Ans9" />
+          <ScalarProperty Name="Q1Ans8" ColumnName="Q1Ans8" />
+          <ScalarProperty Name="Q1Ans7" ColumnName="Q1Ans7" />
+          <ScalarProperty Name="Q1Ans6" ColumnName="Q1Ans6" />
+          <ScalarProperty Name="Q1Ans5" ColumnName="Q1Ans5" />
+          <ScalarProperty Name="Q1Ans4" ColumnName="Q1Ans4" />
+          <ScalarProperty Name="Q1Ans3" ColumnName="Q1Ans3" />
+          <ScalarProperty Name="Q1Ans2" ColumnName="Q1Ans2" />
+          <ScalarProperty Name="Q1Ans1" ColumnName="Q1Ans1" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="IndexNo" ColumnName="IndexNo" />
+          <ScalarProperty Name="PStatus" ColumnName="PStatus" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMarksBKs">
+      <EntityTypeMapping TypeName="ITDb1Model.TblMarksBK">
+        <MappingFragment StoreEntitySet="TblMarksBK">
+          <ScalarProperty Name="Q8Ans4" ColumnName="Q8Ans4" />
+          <ScalarProperty Name="Q8Ans3" ColumnName="Q8Ans3" />
+          <ScalarProperty Name="Q8Ans2" ColumnName="Q8Ans2" />
+          <ScalarProperty Name="Q8Ans1" ColumnName="Q8Ans1" />
+          <ScalarProperty Name="Q7Ans8" ColumnName="Q7Ans8" />
+          <ScalarProperty Name="Q7Ans7" ColumnName="Q7Ans7" />
+          <ScalarProperty Name="Q7Ans6" ColumnName="Q7Ans6" />
+          <ScalarProperty Name="Q7Ans5" ColumnName="Q7Ans5" />
+          <ScalarProperty Name="Q7Ans4" ColumnName="Q7Ans4" />
+          <ScalarProperty Name="Q7Ans3" ColumnName="Q7Ans3" />
+          <ScalarProperty Name="Q7Ans2" ColumnName="Q7Ans2" />
+          <ScalarProperty Name="Q7Ans1" ColumnName="Q7Ans1" />
+          <ScalarProperty Name="Q1Ans10" ColumnName="Q1Ans10" />
+          <ScalarProperty Name="Q1Ans9" ColumnName="Q1Ans9" />
+          <ScalarProperty Name="Q1Ans8" ColumnName="Q1Ans8" />
+          <ScalarProperty Name="Q1Ans7" ColumnName="Q1Ans7" />
+          <ScalarProperty Name="Q1Ans6" ColumnName="Q1Ans6" />
+          <ScalarProperty Name="Q1Ans5" ColumnName="Q1Ans5" />
+          <ScalarProperty Name="Q1Ans4" ColumnName="Q1Ans4" />
+          <ScalarProperty Name="Q1Ans3" ColumnName="Q1Ans3" />
+          <ScalarProperty Name="Q1Ans2" ColumnName="Q1Ans2" />
+          <ScalarProperty Name="Q1Ans1" ColumnName="Q1Ans1" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="Paper_ID" ColumnName="Paper_ID" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Teacher">
+      <EntityTypeMapping TypeName="ITDb1Model.tbl_Teacher">
+        <MappingFragment StoreEntitySet="tbl_Teacher">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="IndexNo" ColumnName="IndexNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,120 @@
+﻿@model AppITInfo.Models.Tbl_Model_Ans_New
+@{
+    ViewBag.Title = "Get model Answer of Question 1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<h2>Get_ModelAns_Excel</h2>
+
+@*@using (Html.BeginForm("Get_ModelAns_Excel", "Admin", FormMethod.Post))
+{*@
+    <form id="form1">
+
+        <div class="form-horizontal">
+
+            <hr />
+
+
+            <div class="form-group">
+                <lable class="control-label col-md-offset-3 col-md-2">
+                    <b>Enter Paper ID</b>
+                </lable>
+                @*<input type="hidden" id="Paper_ID" name="Paper_ID" />*@
+                <input type="text" id="Paper_ID" name="Paper_ID" class="btn btn-default" />
+
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-5 col-md-10">
+                    <input type="button" id="btn_submit1" value="Submit" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+@*}*@
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#btn_submit1").click(function (e) {
+            debugger;
+            $.ajax({
+                url: "../Admin/Export_To_Excel",
+                type: "post",
+                dataType: 'json',
+                data: {
+                    paper: $('#Paper_ID').val()
+                    
+                },
+
+                success: function (Data) {
+                    if (Data.Result) {
+                        debugger;
+                        /*  alert(Data.Response);*/
+                        window.location.href = "../Excel_Files/" + Data.FileName + ".xlsx";
+
+                    }
+                    else {
+                        alert(Data.Response);
+
+                    }
+                },
+                error: function (e1, e2, e3) {
+                    /*Error_Alert(Data.Message);*/
+                },
+
+
+            });
+        });
+    });
+
+    //$(document).ready(function () {
+    //    $("#btn_submit1").click(function (e) {
+    //        debugger
+    //         var formData = new FormData($(form1)[0]);
+           
+    //        console.log(formData);
+    //        $.ajax({
+    //            url: "../Admin/Get_ModelAns_Excel",
+    //            type: "POST",
+    //            data: formData,
+    //            processData: false,
+    //            contentType: false,
+    //            //beforeSend: function () {
+    //            //    Showloader();
+    //            //},
+    //            //complete: function () {
+    //            //    Hideloader();
+    //            //},
+    //            success: function (Data) {
+    //                Success_Alert(Data.Message);
+    //                debugger;
+    //                if (Data.Result) {
+    //                    alert(Data.Response);
+
+
+    //                }
+    //                else {
+    //                    alert(Data.Response);
+    //                }
+    //            },
+    //            error: function (e1, e2, e3) {
+    //                Error_Alert(Data.Message);
+    //            }
+
+    //        });
+    //    });
+
+
+    //});
+</script>
+
+
+
+
+

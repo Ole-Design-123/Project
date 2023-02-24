@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITDb1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bindPaper">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Paper_Id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Index_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_AllAns">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stream" Type="nvarchar(max)" />
+    <Property Name="DivisionCode" Type="nvarchar(max)" />
+    <Property Name="PStatus" Type="varchar" MaxLength="50" />
+    <Property Name="IndexNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateTime" Type="smalldatetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+    <Property Name="OS" Type="nvarchar" MaxLength="50" />
+    <Property Name="Q1Ans1" Type="nvarchar(max)" />
+    <Property Name="Q1Ans2" Type="nvarchar(max)" />
+    <Property Name="Q1Ans3" Type="nvarchar(max)" />
+    <Property Name="Q1Ans4" Type="nvarchar(max)" />
+    <Property Name="Q1Ans5" Type="nvarchar(max)" />
+    <Property Name="Q1Ans6" Type="nvarchar(max)" />
+    <Property Name="Q1Ans7" Type="nvarchar(max)" />
+    <Property Name="Q1Ans8" Type="nvarchar(max)" />
+    <Property Name="Q1Ans9" Type="nvarchar(max)" />
+    <Property Name="Q1Ans10" Type="nvarchar(max)" />
+    <Property Name="Q7Ans1" Type="nvarchar(max)" />
+    <Property Name="Q7Ans2" Type="nvarchar(max)" />
+    <Property Name="Q7Ans3" Type="nvarchar(max)" />
+    <Property Name="Q7Ans4" Type="nvarchar(max)" />
+    <Property Name="Q7Ans5" Type="nvarchar(max)" />
+    <Property Name="Q7Ans6" Type="nvarchar(max)" />
+    <Property Name="Q7Ans7" Type="nvarchar(max)" />
+    <Property Name="Q7Ans8" Type="nvarchar(max)" />
+    <Property Name="Q8Ans1" Type="nvarchar(max)" />
+    <Property Name="Q8Ans2" Type="nvarchar(max)" />
+    <Property Name="Q8Ans3" Type="nvarchar(max)" />
+    <Property Name="Q8Ans4" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_Code_Master">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="division_code" Type="nvarchar(max)" />
+    <Property Name="division_name" Type="nvarchar(max)" />
+    <Property Name="district_code" Type="nvarchar(max)" />
+    <Property Name="district_name" Type="nvarchar(max)" />
+    <Property Name="taluka_code" Type="nvarchar(max)" />
+    <Property Name="taluka_name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_CollgeLogin">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IndexNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Coordinator">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IndexNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Decoded_Answer_Sheets">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Login_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Exam_Time" Type="nvarchar(max)" />
+    <Property Name="Q1ANS1" Type="nvarchar(max)" />
+    <Property Name="Q1ANS2" Type="nvarchar(max)" />
+    <Property Name="Q1ANS3" Type="nvarchar(max)" />
+    <Property Name="Q1ANS4" Type="nvarchar(max)" />
+    <Property Name="Q1ANS5" Type="nvarchar(max)" />
+    <Property Name="Q1ANS6" Type="nvarchar(max)" />
+    <Property Name="Q1ANS7" Type="nvarchar(max)" />
+    <Property Name="Q1ANS8" Type="nvarchar(max)" />
+    <Property Name="Q1ANS9" Type="nvarchar(max)" />
+    <Property Name="Q1ANS10" Type="nvarchar(max)" />
+    <Property Name="Q1ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q2ANS1" Type="nvarchar(max)" />
+    <Property Name="Q2ANS2" Type="nvarchar(max)" />
+    <Property Name="Q2ANS3" Type="nvarchar(max)" />
+    <Property Name="Q2ANS4" Type="nvarchar(max)" />
+    <Property Name="Q2ANS5" Type="nvarchar(max)" />
+    <Property Name="Q2ANS6" Type="nvarchar(max)" />
+    <Property Name="Q2ANS7" Type="nvarchar(max)" />
+    <Property Name="Q2ANS8" Type="nvarchar(max)" />
+    <Property Name="Q2ANS9" Type="nvarchar(max)" />
+    <Property Name="Q2ANS10" Type="nvarchar(max)" />
+    <Property Name="Q2ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q3ANS1" Type="nvarchar(max)" />
+    <Property Name="Q3ANS2" Type="nvarchar(max)" />
+    <Property Name="Q3ANS3" Type="nvarchar(max)" />
+    <Property Name="Q3ANS4" Type="nvarchar(max)" />
+    <Property Name="Q3ANS5" Type="nvarchar(max)" />
+    <Property Name="Q3ANS6" Type="nvarchar(max)" />
+    <Property Name="Q3ANS7" Type="nvarchar(max)" />
+    <Property Name="Q3ANS8" Type="nvarchar(max)" />
+    <Property Name="Q3ANS9" Type="nvarchar(max)" />
+    <Property Name="Q3ANS10" Type="nvarchar(max)" />
+    <Property Name="Q3ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q4ANS1" Type="nvarchar(max)" />
+    <Property Name="Q4ANS2" Type="nvarchar(max)" />
+    <Property Name="Q4ANS3" Type="nvarchar(max)" />
+    <Property Name="Q4ANS4" Type="nvarchar(max)" />
+    <Property Name="Q4ANS5" Type="nvarchar(max)" />
+    <Property Name="Q4ANS6" Type="nvarchar(max)" />
+    <Property Name="Q4ANS7" Type="nvarchar(max)" />
+    <Property Name="Q4ANS8" Type="nvarchar(max)" />
+    <Property Name="Q4ANS9" Type="nvarchar(max)" />
+    <Property Name="Q4ANS10" Type="nvarchar(max)" />
+    <Property Name="Q4ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q5ANS1" Type="nvarchar(max)" />
+    <Property Name="Q5ANS2" Type="nvarchar(max)" />
+    <Property Name="Q5ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q6ANS1" Type="nvarchar(max)" />
+    <Property Name="Q6ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q7ANS1" Type="nvarchar(max)" />
+    <Property Name="Q7ANS2" Type="nvarchar(max)" />
+    <Property Name="Q7ANS3" Type="nvarchar(max)" />
+    <Property Name="Q7ANS4" Type="nvarchar(max)" />
+    <Property Name="Q7ANS5" Type="nvarchar(max)" />
+    <Property Name="Q7ANS6" Type="nvarchar(max)" />
+    <Property Name="Q7ANS7" Type="nvarchar(max)" />
+    <Property Name="Q7ANS8" Type="nvarchar(max)" />
+    <Property Name="Q7ANSWERTIME" Type="nvarchar(max)" />
+    <Property Name="Q8ANS1" Type="nvarchar(max)" />
+    <Property Name="Q8ANS2" Type="nvarchar(max)" />
+    <Property Name="Q8ANS3" Type="nvarchar(max)" />
+    <Property Name="Q8ANS4" Type="nvarchar(max)" />
+    <Property Name="Q8ANSWERTIME" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_Final_Ans">
+    <Key>
+      <PropertyRef Name="eid" />
+    </Key>
+    <Property Name="eid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cstate" Type="nvarchar" MaxLength="50" />
+    <Property Name="seat_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AssignedDatetime" Type="smalldatetime" Nullable="false" />
+    <Property Name="ip" Type="nvarchar(max)" />
+    <Property Name="Paper_ID" Type="nvarchar(max)" />
+    <Property Name="Q1Ans1" Type="nvarchar(max)" />
+    <Property Name="Q1Ans2" Type="nvarchar(max)" />
+    <Property Name="Q1Ans3" Type="nvarchar(max)" />
+    <Property Name="Q1Ans4" Type="nvarchar(max)" />
+    <Property Name="Q1Ans5" Type="nvarchar(max)" />
+    <Property Name="Q1Ans6" Type="nvarchar(max)" />
+    <Property Name="Q1Ans7" Type="nvarchar(max)" />
+    <Property Name="Q1Ans8" Type="nvarchar(max)" />
+    <Property Name="Q1Ans9" Type="nvarchar(max)" />
+    <Property Name="Q1Ans10" Type="nvarchar(max)" />
+    <Property Name="Q2Ans1" Type="nvarchar(max)" />
+    <Property Name="Q2Ans2" Type="nvarchar(max)" />
+    <Property Name="Q2Ans3" Type="nvarchar(max)" />
+    <Property Name="Q2Ans4" Type="nvarchar(max)" />
+    <Property Name="Q2Ans5" Type="nvarchar(max)" />
+    <Property Name="Q2Ans6" Type="nvarchar(max)" />
+    <Property Name="Q2Ans7" Type="nvarchar(max)" />
+    <Property Name="Q2Ans8" Type="nvarchar(max)" />
+    <Property Name="Q2Ans9" Type="nvarchar(max)" />
+    <Property Name="Q2Ans10" Type="nvarchar(max)" />
+    <Property Name="Q3AAns1" Type="nvarchar(max)" />
+    <Property Name="Q3AAns2" Type="nvarchar(max)" />
+    <Property Name="Q3AAns3" Type="nvarchar(max)" />
+    <Property Name="Q3AAns4" Type="nvarchar(max)" />
+    <Property Name="Q3AAns5" Type="nvarchar(max)" />
+    <Property Name="Q3AAns6" Type="nvarchar(max)" />
+    <Property Name="Q3AAns7" Type="nvarchar(max)" />
+    <Property Name="Q3AAns8" Type="nvarchar(max)" />
+    <Property Name="Q3AAns9" Type="nvarchar(max)" />
+    <Property Name="Q3AAns10" Type="nvarchar(max)" />
+    <Property Name="Q3BAns11" Type="nvarchar(max)" />
+    <Property Name="Q3BAns12" Type="nvarchar(max)" />
+    <Property Name="Q3BAns13" Type="nvarchar(max)" />
+    <Property Name="Q3BAns14" Type="nvarchar(max)" />
+    <Property Name="Q3BAns15" Type="nvarchar(max)" />
+    <Property Name="Q3BAns16" Type="nvarchar(max)" />
+    <Property Name="Q3BAns17" Type="nvarchar(max)" />
+    <Property Name="Q3BAns18" Type="nvarchar(max)" />
+    <Property Name="Q3BAns19" Type="nvarchar(max)" />
+    <Property Name="Q3BAns20" Type="nvarchar(max)" />
+    <Property Name="Q4Ans1" Type="nvarchar(max)" />
+    <Property Name="Q4Ans2" Type="nvarchar(max)" />
+    <Property Name="Q4Ans3" Type="nvarchar(max)" />
+    <Property Name="Q4Ans4" Type="nvarchar(max)" />
+    <Property Name="Q4Ans5" Type="nvarchar(max)" />
+    <Property Name="Q5Ans1" Type="nvarchar(max)" />
+    <Property Name="Q5Ans2" Type="nvarchar(max)" />
+    <Property Name="Q6Ans1" Type="nvarchar(max)" />
+    <Property Name="Q6Ans2" Type="nvarchar(max)" />
+    <Property Name="Q7Ans1" Type="nvarchar(max)" />
+    <Property Name="Q7Ans2" Type="nvarchar(max)" />
+    <Property Name="Q7Ans3" Type="nvarchar(max)" />
+    <Property Name="Q7Ans4" Type="nvarchar(max)" />
+    <Property Name="Q7Ans5" Type="nvarchar(max)" />
+    <Property Name="Q7Ans6" Type="nvarchar(max)" />
+    <Property Name="Q7Ans7" Type="nvarchar(max)" />
+    <Property Name="Q7Ans8" Type="nvarchar(max)" />
+    <Property Name="Q8Ans1" Type="nvarchar(max)" />
+    <Property Name="Q8Ans2" Type="nvarchar(max)" />
+    <Property Name="Q8Ans3" Type="nvarchar(max)" />
+    <Property Name="Q8Ans4" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_Marks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Q1" Type="int" />
+    <Property Name="Q7" Type="int" />
+    <Property Name="Q8" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="Q1Ans1" Type="float" />
+    <Property Name="Q1Ans2" Type="float" />
+    <Property Name="Q1Ans3" Type="float" />
+    <Property Name="Q1Ans4" Type="float" />
+    <Property Name="Q1Ans5" Type="float" />
+    <Property Name="Q1Ans6" Type="float" />
+    <Property Name="Q1Ans7" Type="float" />
+    <Property Name="Q1Ans8" Type="float" />
+    <Property Name="Q1Ans9" Type="float" />
+    <Property Name="Q1Ans10" Type="float" />
+    <Property Name="Q7Ans1" Type="float" />
+    <Property Name="Q7Ans2" Type="float" />
+    <Property Name="Q7Ans3" Type="float" />
+    <Property Name="Q7Ans4" Type="float" />
+    <Property Name="Q7Ans5" Type="float" />
+    <Property Name="Q7Ans6" Type="float" />
+    <Property Name="Q7Ans7" Type="float" />
+    <Property Name="Q7Ans8" Type="float" />
+    <Property Name="Q8Ans1" Type="float" />
+    <Property Name="Q8Ans2" Type="float" />
+    <Property Name="Q8Ans3" Type="float" />
+    <Property Name="Q8Ans4" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'New_Course_ITDB_2023.dbo.Tbl_Model_Ans_New' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Model_Ans_New">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Paper_ID" Type="nvarchar(max)" />
+    <Property Name="Question_No" Type="nvarchar(max)" />
+    <Property Name="Sub_Question" Type="nvarchar(max)" />
+    <Property Name="Question" Type="nvarchar(max)" />
+    <Property Name="Model_Ans" Type="nvarchar(max)" />
+    <Property Name="Papers_Path" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'New_Course_ITDB_2023.dbo.Tbl_Moderator' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Moderator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IndexNo" Type="nvarchar(max)" />
+    <Property Name="DivisionCode" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="MobileNo" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_Moderator_Marks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Moderator_Index_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Div_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Q1" Type="int" />
+    <Property Name="Q7" Type="int" />
+    <Property Name="Q8" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="Q1Ans1" Type="float" />
+    <Property Name="Q1Ans2" Type="float" />
+    <Property Name="Q1Ans3" Type="float" />
+    <Property Name="Q1Ans4" Type="float" />
+    <Property Name="Q1Ans5" Type="float" />
+    <Property Name="Q1Ans6" Type="float" />
+    <Property Name="Q1Ans7" Type="float" />
+    <Property Name="Q1Ans8" Type="float" />
+    <Property Name="Q1Ans9" Type="float" />
+    <Property Name="Q1Ans10" Type="float" />
+    <Property Name="Q7Ans1" Type="float" />
+    <Property Name="Q7Ans2" Type="float" />
+    <Property Name="Q7Ans3" Type="float" />
+    <Property Name="Q7Ans4" Type="float" />
+    <Property Name="Q7Ans5" Type="float" />
+    <Property Name="Q7Ans6" Type="float" />
+    <Property Name="Q7Ans7" Type="float" />
+    <Property Name="Q7Ans8" Type="float" />
+    <Property Name="Q8Ans1" Type="float" />
+    <Property Name="Q8Ans2" Type="float" />
+    <Property Name="Q8Ans3" Type="float" />
+    <Property Name="Q8Ans4" Type="float" />
+    <Property Name="Submission_Time" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="tbl_Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IndexNo" Type="nvarchar(max)" />
+    <Property Name="DivisionCode" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="MobileNo" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'New_Course_ITDB_2023.dbo.TblAllAns_Bk' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblAllAns_Bk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stream" Type="nvarchar(max)" />
+    <Property Name="DivisionCode" Type="nvarchar(max)" />
+    <Property Name="PStatus" Type="varchar" MaxLength="50" />
+    <Property Name="IndexNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateTime" Type="smalldatetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+    <Property Name="OS" Type="nvarchar" MaxLength="50" />
+    <Property Name="Q1Ans1" Type="nvarchar(max)" />
+    <Property Name="Q1Ans2" Type="nvarchar(max)" />
+    <Property Name="Q1Ans3" Type="nvarchar(max)" />
+    <Property Name="Q1Ans4" Type="nvarchar(max)" />
+    <Property Name="Q1Ans5" Type="nvarchar(max)" />
+    <Property Name="Q1Ans6" Type="nvarchar(max)" />
+    <Property Name="Q1Ans7" Type="nvarchar(max)" />
+    <Property Name="Q1Ans8" Type="nvarchar(max)" />
+    <Property Name="Q1Ans9" Type="nvarchar(max)" />
+    <Property Name="Q1Ans10" Type="nvarchar(max)" />
+    <Property Name="Q7Ans1" Type="nvarchar(max)" />
+    <Property Name="Q7Ans2" Type="nvarchar(max)" />
+    <Property Name="Q7Ans3" Type="nvarchar(max)" />
+    <Property Name="Q7Ans4" Type="nvarchar(max)" />
+    <Property Name="Q7Ans5" Type="nvarchar(max)" />
+    <Property Name="Q7Ans6" Type="nvarchar(max)" />
+    <Property Name="Q7Ans7" Type="nvarchar(max)" />
+    <Property Name="Q7Ans8" Type="nvarchar(max)" />
+    <Property Name="Q8Ans1" Type="nvarchar(max)" />
+    <Property Name="Q8Ans2" Type="nvarchar(max)" />
+    <Property Name="Q8Ans3" Type="nvarchar(max)" />
+    <Property Name="Q8Ans4" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'New_Course_ITDB_2023.dbo.TblMarksBK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblMarksBK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paper_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Q1" Type="int" />
+    <Property Name="Q7" Type="int" />
+    <Property Name="Q8" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="Q1Ans1" Type="float" />
+    <Property Name="Q1Ans2" Type="float" />
+    <Property Name="Q1Ans3" Type="float" />
+    <Property Name="Q1Ans4" Type="float" />
+    <Property Name="Q1Ans5" Type="float" />
+    <Property Name="Q1Ans6" Type="float" />
+    <Property Name="Q1Ans7" Type="float" />
+    <Property Name="Q1Ans8" Type="float" />
+    <Property Name="Q1Ans9" Type="float" />
+    <Property Name="Q1Ans10" Type="float" />
+    <Property Name="Q7Ans1" Type="float" />
+    <Property Name="Q7Ans2" Type="float" />
+    <Property Name="Q7Ans3" Type="float" />
+    <Property Name="Q7Ans4" Type="float" />
+    <Property Name="Q7Ans5" Type="float" />
+    <Property Name="Q7Ans6" Type="float" />
+    <Property Name="Q7Ans7" Type="float" />
+    <Property Name="Q7Ans8" Type="float" />
+    <Property Name="Q8Ans1" Type="float" />
+    <Property Name="Q8Ans2" Type="float" />
+    <Property Name="Q8Ans3" Type="float" />
+    <Property Name="Q8Ans4" Type="float" />
+  </EntityType>
+  <EntityContainer Name="ITDb1ModelStoreContainer">
+    <EntitySet Name="bindPaper" EntityType="Self.bindPaper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_AllAns" EntityType="Self.Tbl_AllAns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Code_Master" EntityType="Self.Tbl_Code_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CollgeLogin" EntityType="Self.tbl_CollgeLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Coordinator" EntityType="Self.Tbl_Coordinator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Decoded_Answer_Sheets" EntityType="Self.Tbl_Decoded_Answer_Sheets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Final_Ans" EntityType="Self.Tbl_Final_Ans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Marks" EntityType="Self.Tbl_Marks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Moderator_Marks" EntityType="Self.Tbl_Moderator_Marks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Teacher" EntityType="Self.tbl_Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Model_Ans_New" EntityType="Self.Tbl_Model_Ans_New" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_Model_Ans_New].[ID] AS [ID], 
+[Tbl_Model_Ans_New].[Paper_ID] AS [Paper_ID], 
+[Tbl_Model_Ans_New].[Question_No] AS [Question_No], 
+[Tbl_Model_Ans_New].[Sub_Question] AS [Sub_Question], 
+[Tbl_Model_Ans_New].[Question] AS [Question], 
+[Tbl_Model_Ans_New].[Model_Ans] AS [Model_Ans], 
+[Tbl_Model_Ans_New].[Papers_Path] AS [Papers_Path]
+FROM [dbo].[Tbl_Model_Ans_New] AS [Tbl_Model_Ans_New]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Moderator" EntityType="Self.Tbl_Moderator" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_Moderator].[ID] AS [ID], 
+[Tbl_Moderator].[IndexNo] AS [IndexNo], 
+[Tbl_Moderator].[DivisionCode] AS [DivisionCode], 
+[Tbl_Moderator].[Name] AS [Name], 
+[Tbl_Moderator].[Subject] AS [Subject], 
+[Tbl_Moderator].[MobileNo] AS [MobileNo], 
+[Tbl_Moderator].[Password] AS [Password]
+FROM [dbo].[Tbl_Moderator] AS [Tbl_Moderator]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblAllAns_Bk" EntityType="Self.TblAllAns_Bk" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblAllAns_Bk].[id] AS [id], 
+[TblAllAns_Bk].[TID] AS [TID], 
+[TblAllAns_Bk].[Stream] AS [Stream], 
+[TblAllAns_Bk].[DivisionCode] AS [DivisionCode], 
+[TblAllAns_Bk].[PStatus] AS [PStatus], 
+[TblAllAns_Bk].[IndexNo] AS [IndexNo], 
+[TblAllAns_Bk].[Seat_No] AS [Seat_No], 
+[TblAllAns_Bk].[DateTime] AS [DateTime], 
+[TblAllAns_Bk].[IP] AS [IP], 
+[TblAllAns_Bk].[Paper_ID] AS [Paper_ID], 
+[TblAllAns_Bk].[Batch] AS [Batch], 
+[TblAllAns_Bk].[OS] AS [OS], 
+[TblAllAns_Bk].[Q1Ans1] AS [Q1Ans1], 
+[TblAllAns_Bk].[Q1Ans2] AS [Q1Ans2], 
+[TblAllAns_Bk].[Q1Ans3] AS [Q1Ans3], 
+[TblAllAns_Bk].[Q1Ans4] AS [Q1Ans4], 
+[TblAllAns_Bk].[Q1Ans5] AS [Q1Ans5], 
+[TblAllAns_Bk].[Q1Ans6] AS [Q1Ans6], 
+[TblAllAns_Bk].[Q1Ans7] AS [Q1Ans7], 
+[TblAllAns_Bk].[Q1Ans8] AS [Q1Ans8], 
+[TblAllAns_Bk].[Q1Ans9] AS [Q1Ans9], 
+[TblAllAns_Bk].[Q1Ans10] AS [Q1Ans10], 
+[TblAllAns_Bk].[Q7Ans1] AS [Q7Ans1], 
+[TblAllAns_Bk].[Q7Ans2] AS [Q7Ans2], 
+[TblAllAns_Bk].[Q7Ans3] AS [Q7Ans3], 
+[TblAllAns_Bk].[Q7Ans4] AS [Q7Ans4], 
+[TblAllAns_Bk].[Q7Ans5] AS [Q7Ans5], 
+[TblAllAns_Bk].[Q7Ans6] AS [Q7Ans6], 
+[TblAllAns_Bk].[Q7Ans7] AS [Q7Ans7], 
+[TblAllAns_Bk].[Q7Ans8] AS [Q7Ans8], 
+[TblAllAns_Bk].[Q8Ans1] AS [Q8Ans1], 
+[TblAllAns_Bk].[Q8Ans2] AS [Q8Ans2], 
+[TblAllAns_Bk].[Q8Ans3] AS [Q8Ans3], 
+[TblAllAns_Bk].[Q8Ans4] AS [Q8Ans4]
+FROM [dbo].[TblAllAns_Bk] AS [TblAllAns_Bk]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblMarksBK" EntityType="Self.TblMarksBK" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblMarksBK].[ID] AS [ID], 
+[TblMarksBK].[Seat_No] AS [Seat_No], 
+[TblMarksBK].[Paper_ID] AS [Paper_ID], 
+[TblMarksBK].[Q1] AS [Q1], 
+[TblMarksBK].[Q7] AS [Q7], 
+[TblMarksBK].[Q8] AS [Q8], 
+[TblMarksBK].[Total] AS [Total], 
+[TblMarksBK].[Q1Ans1] AS [Q1Ans1], 
+[TblMarksBK].[Q1Ans2] AS [Q1Ans2], 
+[TblMarksBK].[Q1Ans3] AS [Q1Ans3], 
+[TblMarksBK].[Q1Ans4] AS [Q1Ans4], 
+[TblMarksBK].[Q1Ans5] AS [Q1Ans5], 
+[TblMarksBK].[Q1Ans6] AS [Q1Ans6], 
+[TblMarksBK].[Q1Ans7] AS [Q1Ans7], 
+[TblMarksBK].[Q1Ans8] AS [Q1Ans8], 
+[TblMarksBK].[Q1Ans9] AS [Q1Ans9], 
+[TblMarksBK].[Q1Ans10] AS [Q1Ans10], 
+[TblMarksBK].[Q7Ans1] AS [Q7Ans1], 
+[TblMarksBK].[Q7Ans2] AS [Q7Ans2], 
+[TblMarksBK].[Q7Ans3] AS [Q7Ans3], 
+[TblMarksBK].[Q7Ans4] AS [Q7Ans4], 
+[TblMarksBK].[Q7Ans5] AS [Q7Ans5], 
+[TblMarksBK].[Q7Ans6] AS [Q7Ans6], 
+[TblMarksBK].[Q7Ans7] AS [Q7Ans7], 
+[TblMarksBK].[Q7Ans8] AS [Q7Ans8], 
+[TblMarksBK].[Q8Ans1] AS [Q8Ans1], 
+[TblMarksBK].[Q8Ans2] AS [Q8Ans2], 
+[TblMarksBK].[Q8Ans3] AS [Q8Ans3], 
+[TblMarksBK].[Q8Ans4] AS [Q8Ans4]
+FROM [dbo].[TblMarksBK] AS [TblMarksBK]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

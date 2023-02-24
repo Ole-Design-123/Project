@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITDb1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tbl_AllAns">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IndexNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seat_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateTime" Type="DateTime" Precision="0" />
+    <Property Name="Paper_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Stream" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Coordinator">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndexNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_CollgeLogin">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="Int32" Nullable="false" />
+    <Property Name="IndexNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ITDb1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_AllAns" EntityType="Self.Tbl_AllAns" />
+    <EntitySet Name="Tbl_Coordinator" EntityType="Self.Tbl_Coordinator" />
+    <EntitySet Name="tbl_CollgeLogin" EntityType="Self.tbl_CollgeLogin" />
+    <EntitySet Name="Tbl_Moderator" EntityType="ITDb1Model.Tbl_Moderator" />
+    <EntitySet Name="Tbl_Code_Master" EntityType="ITDb1Model.Tbl_Code_Master" />
+    <EntitySet Name="Tbl_Moderator_Marks" EntityType="ITDb1Model.Tbl_Moderator_Marks" />
+    <EntitySet Name="Tbl_Marks" EntityType="ITDb1Model.Tbl_Marks" />
+    <EntitySet Name="Tbl_Model_Ans_New" EntityType="ITDb1Model.Tbl_Model_Ans_New" />
+    <EntitySet Name="bindPapers" EntityType="ITDb1Model.bindPaper" />
+    <EntitySet Name="Tbl_Admin" EntityType="ITDb1Model.Tbl_Admin" />
+    <EntitySet Name="Tbl_Decoded_Answer_Sheets" EntityType="ITDb1Model.Tbl_Decoded_Answer_Sheets" />
+    <EntitySet Name="Tbl_Final_Ans" EntityType="ITDb1Model.Tbl_Final_Ans" />
+    <EntitySet Name="TblAllAns_Bk" EntityType="ITDb1Model.TblAllAns_Bk" />
+    <EntitySet Name="TblMarksBKs" EntityType="ITDb1Model.TblMarksBK" />
+    <EntitySet Name="tbl_Teacher" EntityType="ITDb1Model.tbl_Teacher" />
+  </EntityContainer>
+  <EntityType Name="Tbl_Moderator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndexNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Code_Master">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="division_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="division_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="district_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="district_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="taluka_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="taluka_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Moderator_Marks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Moderator_Index_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Div_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seat_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paper_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Q1" Type="Int32" />
+    <Property Name="Q7" Type="Int32" />
+    <Property Name="Q8" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Q1Ans1" Type="Double" />
+    <Property Name="Q1Ans2" Type="Double" />
+    <Property Name="Q1Ans3" Type="Double" />
+    <Property Name="Q1Ans4" Type="Double" />
+    <Property Name="Q1Ans5" Type="Double" />
+    <Property Name="Q1Ans6" Type="Double" />
+    <Property Name="Q1Ans7" Type="Double" />
+    <Property Name="Q1Ans8" Type="Double" />
+    <Property Name="Q1Ans9" Type="Double" />
+    <Property Name="Q1Ans10" Type="Double" />
+    <Property Name="Q7Ans1" Type="Double" />
+    <Property Name="Q7Ans2" Type="Double" />
+    <Property Name="Q7Ans3" Type="Double" />
+    <Property Name="Q7Ans4" Type="Double" />
+    <Property Name="Q7Ans5" Type="Double" />
+    <Property Name="Q7Ans6" Type="Double" />
+    <Property Name="Q7Ans7" Type="Double" />
+    <Property Name="Q7Ans8" Type="Double" />
+    <Property Name="Q8Ans1" Type="Double" />
+    <Property Name="Q8Ans2" Type="Double" />
+    <Property Name="Q8Ans3" Type="Double" />
+    <Property Name="Q8Ans4" Type="Double" />
+    <Property Name="Submission_Time" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Tbl_Marks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Seat_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paper_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Q1" Type="Int32" />
+    <Property Name="Q7" Type="Int32" />
+    <Property Name="Q8" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Q1Ans1" Type="Double" />
+    <Property Name="Q1Ans2" Type="Double" />
+    <Property Name="Q1Ans3" Type="Double" />
+    <Property Name="Q1Ans4" Type="Double" />
+    <Property Name="Q1Ans5" Type="Double" />
+    <Property Name="Q1Ans6" Type="Double" />
+    <Property Name="Q1Ans7" Type="Double" />
+    <Property Name="Q1Ans8" Type="Double" />
+    <Property Name="Q1Ans9" Type="Double" />
+    <Property Name="Q1Ans10" Type="Double" />
+    <Property Name="Q7Ans1" Type="Double" />
+    <Property Name="Q7Ans2" Type="Double" />
+    <Property Name="Q7Ans3" Type="Double" />
+    <Property Name="Q7Ans4" Type="Double" />
+    <Property Name="Q7Ans5" Type="Double" />
+    <Property Name="Q7Ans6" Type="Double" />
+    <Property Name="Q7Ans7" Type="Double" />
+    <Property Name="Q7Ans8" Type="Double" />
+    <Property Name="Q8Ans1" Type="Double" />
+    <Property Name="Q8Ans2" Type="Double" />
+    <Property Name="Q8Ans3" Type="Double" />
+    <Property Name="Q8Ans4" Type="Double" />
+  </EntityType>
+  <EntityType Name="Tbl_Model_Ans_New">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Paper_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Question_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sub_Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Model_Ans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Papers_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="bindPaper">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Paper_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Index_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Decoded_Answer_Sheets">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Seat_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paper_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Exam_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANS10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANS10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANS10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANS10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q5ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q5ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q5ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q6ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q6ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANS8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8ANS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8ANS2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8ANS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8ANS4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8ANSWERTIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Final_Ans">
+    <Key>
+      <PropertyRef Name="eid" />
+    </Key>
+    <Property Name="eid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cstate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="seat_no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AssignedDatetime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Paper_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q2Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3AAns10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns13" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns16" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns17" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns18" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns19" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q3BAns20" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q4Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q5Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q5Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q6Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q6Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblAllAns_Bk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Stream" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IndexNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seat_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateTime" Type="DateTime" Precision="0" />
+    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paper_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q1Ans10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q7Ans8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Q8Ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblMarksBK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Seat_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paper_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Q1" Type="Int32" />
+    <Property Name="Q7" Type="Int32" />
+    <Property Name="Q8" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Q1Ans1" Type="Double" />
+    <Property Name="Q1Ans2" Type="Double" />
+    <Property Name="Q1Ans3" Type="Double" />
+    <Property Name="Q1Ans4" Type="Double" />
+    <Property Name="Q1Ans5" Type="Double" />
+    <Property Name="Q1Ans6" Type="Double" />
+    <Property Name="Q1Ans7" Type="Double" />
+    <Property Name="Q1Ans8" Type="Double" />
+    <Property Name="Q1Ans9" Type="Double" />
+    <Property Name="Q1Ans10" Type="Double" />
+    <Property Name="Q7Ans1" Type="Double" />
+    <Property Name="Q7Ans2" Type="Double" />
+    <Property Name="Q7Ans3" Type="Double" />
+    <Property Name="Q7Ans4" Type="Double" />
+    <Property Name="Q7Ans5" Type="Double" />
+    <Property Name="Q7Ans6" Type="Double" />
+    <Property Name="Q7Ans7" Type="Double" />
+    <Property Name="Q7Ans8" Type="Double" />
+    <Property Name="Q8Ans1" Type="Double" />
+    <Property Name="Q8Ans2" Type="Double" />
+    <Property Name="Q8Ans3" Type="Double" />
+    <Property Name="Q8Ans4" Type="Double" />
+  </EntityType>
+  <EntityType Name="tbl_Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndexNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DivisionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

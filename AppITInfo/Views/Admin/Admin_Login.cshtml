@@ -1,0 +1,48 @@
+﻿@model AppITInfo.Models.Tbl_Admin
+@{
+    ViewBag.Title = "Admin_Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin_Login</h2>
+@using (Html.BeginForm())
+{
+
+
+    @Html.AntiForgeryToken()
+    <h2 style="text-align:center">Admin Login</h2>
+    <div class="form-horizontal">
+
+        <hr />
+        @if (@TempData["Msg"] != null)
+        {
+                <h1>@TempData["Msg"] </h1>
+             
+        }
+
+        <div class="form-group">
+            <lable class="control-label col-md-offset-3 col-md-2">
+                <b>Index No</b>
+            </lable>
+
+            <div class="col-md-4">
+                <input id="IndexNo" type="text" class="form-control" name="IndexNo" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-offset-3 col-md-2" })
+            <div class="col-md-4">
+                <input id="Password" type="password" class="form-control" name="Password" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-5 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

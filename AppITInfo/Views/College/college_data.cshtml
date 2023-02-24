@@ -1,0 +1,1387 @@
+﻿@model AppITInfo.Models.CoordCollegeViewModel
+@{
+    ViewBag.Title = "college_data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+</head>
+
+@using (Html.BeginForm("AddMrks", "College", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="left:32px">
+                    <label> TID :</label>
+                    @Html.DisplayFor(model => model.TID)
+                    (@Html.DisplayFor(model => model.stream))
+                </div>
+                <div class="col-md-5" style="left:220px">
+                    <table border="1" style="width:10%">
+                        <tbody>
+                            
+                            <tr>
+                                <td style="padding:1px;">
+                                    <span>Q1 </span>
+                                </td>
+                                <td style="padding:1px;">
+                                    <span>Q7</span>
+                                </td>
+                                <td style="padding:1px;">
+                                    <span>Q8</span>
+                                </td>
+                                <td style="padding:1px; width:30%">
+                                    <span>Total Marks</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:2px;">
+                                    <input value="0" readonly="readonly" type="text" name="total" />
+                                </td>
+                                <td style="padding:1px;">
+                                    <input id="s" value="0" readonly="readonly" type="text" />
+                                </td>
+                                <td style="padding:1px;">
+                                    <input id="s1" value="0" readonly="readonly" type="text" />
+                                </td>
+                                <td style="padding:1px; width:30%">
+                                    <span>0</span>
+                                </td>
+
+                            </tr>
+                
+                </tbody>
+
+                </table>
+
+            </div>
+                <br />
+
+                <div class=" row">
+                    <div class="col-md-3" style="right:75.7%">
+                        <label>Teacher Name :</label>
+                        @Html.DisplayFor(model => model.TName)
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </center>
+    <br />
+    <div class="container">
+        <div class="row">
+            @*<div class="col-md-2">
+                    <input type="button" class="btn btn-success" name="Logout" value="Logout" id="btn_lg" style="height:27px" />
+                </div>*@
+            <div class="col-md-2" style=" right:10px">
+                <label></label>
+                <input type="button" class="btn btn-success" name="Skip Paper" value="Skip Paper" id="btn_lg" style="height:40px" />
+            </div>
+            <div class="col-md-2" style=" right:70px">
+                <label></label>
+                <input type="button" class="btn btn-success" name="Submit" value="Submit" id="btnSave" style="height:40px" />
+            </div>
+
+
+
+            <div class="col-md-3" style=" left:-100px">
+                <label>Reason To Skip The Paper </label>
+                <div class="row" style="left:-90px">
+                    <select id="hd" name="select" style="width:180px">
+                        <option value="0"> </option>
+                        <option value="1">Q1 Problem</option>
+                        <option value="2">Q7 Problem</option>
+                        <option value="3">Q8 Problem</option>
+
+                    </select>
+
+
+                    <div class="col-md-7" style="left:360px">
+                        <table border="1" style="width:250%">
+                            <tbody>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <span></span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>Assign </span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>Check</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>Uncheck</span>
+                                    </td>
+                                    <td style="padding:1px; width:30%">
+                                        <span>Skip</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <span>Total</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span> @Html.DisplayFor(model => model.TotalPapers) </span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>@Html.DisplayFor(model => model.CompletePapers)</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>@Html.DisplayFor(model => model.IncompletePapers)</span>
+                                    </td>
+                                    <td style="padding:1px; width:30%">
+                                        <span>@Html.DisplayFor(model => model.SkipPapers)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <span>Today's</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>0 </span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>0</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <span>0</span>
+                                    </td>
+                                    <td style="padding:1px; width:30%">
+                                        <span>0</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> <br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-6" style="right:130px">
+                            @foreach (var i in Model.allans)
+                            {
+                                if (i.Seat_No != null)
+                                {
+
+                                    <label id="stno"> Seat No :</label>
+                                    @i.Seat_No
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-2" style="right:680px">
+                    @foreach (var i in Model.allans)
+                    {
+                        if (i.Paper_ID != null)
+                        {
+                            <label id="pid"> Paper Id :</label>
+                            @i.Paper_ID
+                        }
+                    }
+
+                </div>
+                <div class="col-md-3" style="right:732px">
+                    @foreach (var i in Model.allans)
+                    {
+                        if (i.Stream != null)
+                        {
+
+                            <label>Stream : </label>
+                            @i.Stream
+                        }
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <style>
+        .tb {
+            height: 500px;
+            display: block;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+            .tab li {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 10px 12px;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+
+                .tab li:hover {
+                    background-color: #ddd;
+                }
+
+                .tab li.active {
+                    background-color: #ccc;
+                }
+
+        .tabcontent {
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+
+
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#q1">Q1</a></li>
+            <li><a data-toggle="tab" href="#q7">Q7</a></li>
+            <li><a data-toggle="tab" href="#q8">Q8</a></li>
+
+        </ul>
+    </div>
+
+    <div class="tab-content">
+        <div id="q1" class="tab-pane fade in active">
+            <center>
+
+                <div class="row">
+                    <div class="col-md-4" style="right:-30px">
+
+                        <table border="1" style="width:300%">
+                            <tbody class="tb" style="width:1000px">
+
+                                <tr>
+                                    <td style="padding:1px; width:7%; height:30px">
+                                        <span>Sr.No.</span>
+                                    </td>
+                                    <td style="padding:1px;width:45%">
+                                        <span>Question </span>
+                                    </td>
+                                    <td style="padding: 1px; width: 30%">
+                                        <span>Model Answer</span>
+                                    </td>
+                                    <td style="padding: 1px; width: 90%">
+                                        <span>Student Answer</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td style="padding:1px; height:90px">
+                                        <span>Q1</span>
+                                    </td>
+
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "1")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans1 != null)
+                                                        {
+                                                            <span>@i.Q1Ans1</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q2</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "2")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans2 != null)
+                                                        {
+                                                            <span>@i.Q1Ans2</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q3</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "3")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans3 != null)
+                                                        {
+                                                            <span>@i.Q1Ans3</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q4</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "4")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans4 != null)
+                                                        {
+                                                            <span>@i.Q1Ans4</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q5</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "5")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans5 != null)
+                                                        {
+                                                            <span>@i.Q1Ans5</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q6</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "6")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans6 != null)
+                                                        {
+                                                            <span>@i.Q1Ans6</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q7</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "7")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans7 != null)
+                                                        {
+                                                            <span>@i.Q1Ans7</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q8</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "8")
+                                            {
+
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans8 != null)
+                                                        {
+                                                            <span>@i.Q1Ans8</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q9</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "9")
+                                            {
+
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans9 != null)
+                                                        {
+                                                            <span>@i.Q1Ans9</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1px; height: 90px">
+                                        <span>Q10</span>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "1" && item.Sub_Question == "10")
+                                            {
+
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1"><tr><td style="padding:8px; width:150px"><span></span></td></tr></table>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <table border="1">
+                                            <tr>
+                                                <td style="padding:8px; width:150px">
+                                                    @foreach (var i in Model.allans)
+                                                    {
+                                                        if (i.Q1Ans10 != null)
+                                                        {
+                                                            <span>@i.Q1Ans10</span>
+                                                        }
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="checkbox" id="right" name="right" value="1" onclick="totalIt()">
+                                        <label for="right">Right</label>
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </center>
+        </div>
+
+
+
+        <div id="q7" class="tab-pane fade">
+
+            <center>
+
+                <div class="row">
+                    <div class="col-md-4" style="right:-30px">
+
+                        <table border="1" style="width:300%">
+                            <tbody class="tb" style="width:1000px">
+                                <tr>
+                                    <td style="padding:1px; width:7%; height:30px">
+                                        <span>Sr.No.</span>
+                                    </td>
+                                    <td style="padding:1px;width:45%">
+                                        <span>Question / Answer</span>
+                                    </td>
+                                    <td style="padding: 1px; width: 40%">
+                                        <span>Marks</span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding:1px; height:20px">
+                                        <span>Q1</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color:#D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "1")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span> </span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans1 != null)
+                                            {
+                                                <span>@i.Q7Ans1</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_1" name="q7_1" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q2</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "2")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans2 != null)
+                                            {<span>@i.Q7Ans2</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_2" name="q7_2" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q3</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "3")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans3 != null)
+                                            {<span>@i.Q7Ans3</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_3" name="q7_3" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q4</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "4")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans4 != null)
+                                            {<span>@i.Q7Ans4</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_4" name="q7_4" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q5</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "5")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans5 != null)
+                                            {<span>@i.Q7Ans5</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_5" name="q7_5" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q6</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "6")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans6 != null)
+                                            {<span>@i.Q7Ans6</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_6" name="q7_6" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q7</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "7")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans7 != null)
+                                            {<span>@i.Q7Ans7</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_7" name="q7_7" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q8</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "7" && item.Sub_Question == "8")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q7Ans8 != null)
+                                            {<span>@i.Q7Ans8</span>}
+
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 40%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q7_8" name="q7_8" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </center>
+        </div>
+
+
+        <div id="q8" class="tab-pane fade">
+
+            <center>
+
+                <div class="row">
+                    <div class="col-md-4" style="right:-30px">
+
+                        <table border="1" style="width:300%">
+                            <tbody class="tb" style="width:700px">
+                                <tr>
+                                    <td style="padding:1px; width:7%; height:30px">
+                                        <span>Sr.No.</span>
+                                    </td>
+                                    <td style="padding:1px;width:35%">
+                                        <span>Question / Answer</span>
+                                    </td>
+                                    <td style="padding: 1px; width: 40%">
+                                        <span>Marks</span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding:1px; height:60px">
+                                        <span>Q1</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "8" && item.Sub_Question == "1")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q8Ans1 != null)
+                                            {
+                                                <span>@i.Q8Ans1</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 60%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q8_1" name="q8_1" style="width:80px">
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q2</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "8" && item.Sub_Question == "2")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q8Ans2 != null)
+                                            {
+                                                <span>@i.Q8Ans2</span>
+                                            }
+                                        }
+                                    </td>
+
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 60%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q8_2" name="q8_2" style="width:80px">
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q3</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "8" && item.Sub_Question == "3")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q8Ans3 != null)
+                                            {
+                                                <span>@i.Q8Ans3</span>
+                                            }
+                                        }
+                                    </td>
+
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 60%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q8_3" name="q8_3" style="width:80px">
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Q4</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #D3D3D3">
+                                        @foreach (var item in Model.tbl_Model_Ans)
+                                        {
+                                            if (item.Question_No == "8" && item.Sub_Question == "4")
+                                            {
+                                                <span>@item.Question</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td style="padding:1px">
+                                        <span></span>
+                                    </td>
+
+                                </tr>
+                                <tr style="height:90px">
+                                    <td style="padding: 1px; height: 60px">
+                                        <span>Ans</span>
+                                    </td>
+                                    <td class="tb" style="padding: 1px; height: 80px; background-color: #FFEEEC">
+                                        @foreach (var i in Model.allans)
+                                        {
+                                            if (i.Q8Ans4 != null)
+                                            {
+                                                <span>@i.Q8Ans4</span>
+                                            }
+                                        }
+                                    </td>
+
+                                    <td style="padding:1px">
+                                        <table style="margin: 0 auto; width: 60%; border: groove ">
+                                            <tr>
+                                                <td style="background-color:azure">
+                                                    <div class="col-md-3" style=" left:18px">
+                                                        <label>Marks </label>
+                                                        <div class="row" style="left:-90px">
+                                                            <select id="q8_4" name="q8_4" style="width:80px">
+
+                                                                <option value="0">0</option>
+                                                                <option value="0.5">0.5</option>
+                                                                <option value="1">1</option>
+                                                                <option value="1.5">1.5</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </center>
+        </div>
+    </div>
+
+}
+
+
+
+    
+
+
+   

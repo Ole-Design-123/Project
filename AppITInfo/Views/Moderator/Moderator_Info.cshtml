@@ -1,0 +1,100 @@
+﻿@model AppITInfo.Models.ModeratorModel
+@{
+    ViewBag.Title = "Moderator_Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Moderator_Info</h2>
+
+@*<h2 style="text-align:center">Report</h2>
+    <br />*@
+<div>
+
+    <center>
+        <div class=" row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3" style="left:110px"><label> Moderator Index No :</label></div>
+            <div class="col-lg-1" style="left:45px">@Html.DisplayFor(model => model.MID)</div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3" style="left:85px"><label>No of total papers :</label></div>
+            <div class="col-lg-1" style="left:-10px">@Html.DisplayFor(model => model.TotalPapers)</div>
+        </div>
+    </center>
+
+    <br />
+    <center>
+        <div class=" row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3" style="left:117px"><label>Moderator Name :</label></div>
+            <div class="col-lg-1" style="left:45px">@Html.DisplayFor(model => model.MName)</div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3" style="left:50px"><label>No of papers cheacked by you :</label></div>
+            <div class="col-lg-1" style="left:-10px">@Html.DisplayFor(model => model.CompletePapers)</div>
+            </div>
+    </center>
+    <br />
+    
+    <div class="row">
+        <div class="col-md-3"></div>
+            <label>Search By Total Marks :</label>
+            <input id="IndexNo" type="text" style="width:100px;height:27px" autofocus>
+            <input type="button" class="btn btn-success" name="Search" value="Search" id="btn_ser" style="height:27px"/>
+
+        <div class="col-md-4">
+            <label>Search By TID :</label>
+            <input id="IndexNo" type="text" style="width:100px;height:27px" autofocus>
+            <input type="button" class="btn btn-success" name="Search" value="Search"id="btn_ser1" style="height:27px" />
+        </div>
+    </div>
+    
+    
+       
+    
+</div>
+
+
+
+
+
+
+    @*<table class="table table-striped table-bordered table-sm">
+            <thead style="background-color:silver">
+                <tr>
+                    <th scope="col">Moderator Index No</th>
+                    <th scope="col">No. of Total Papers</th>
+                    <th scope="col">No. of papers rechecked by you</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> @Html.DisplayFor(model => model.MID)</td>
+                    <td> @Html.DisplayFor(model => model.TotalPapers)</td>
+                    <td> @Html.DisplayFor(model => model.CompletePapers)</td>
+                </tr>
+            </tbody>
+
+        </table>*@
+
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: 'getTeacherInfo',
+                datatype: 'json',
+                success: function (data) {
+                    var rows = "<tr>" +
+                        "<td >" + data.DivisionCode + "</td>" +
+                        "<td >" + data.Name + "</td>" +
+                        "<td >" + data.Subject + "</td>" +
+                        "<td >" + data.MobileNo + "</td>" +
+                        '<td><a href="/College/EditDetails/"' + data.IndexNo + '">Edit Details</a> | <a href="/College/ChangePassword"' + data.IndexNo + '">Change Password</a></td>' +
+                        +"</tr>";
+                    $('#TeacherInfo tbody').append(rows);
+                    $("#loading-image").hide();
+                },
+            });
+        });
+
+    </script>*@
+
